@@ -13,7 +13,7 @@ import javax.swing.border.TitledBorder;
 
 public class Stickman extends JFrame implements ActionListener {
 
-	public final String VERS = "1.0.0"; //Version number
+	public final String VERS = "1.1.0"; //Version number
 	public final String TITLE = "Stickman " + VERS; //Frame Title
 	private static final long serialVersionUID = -926469678696297356L; //SerialVersionUID
 	//Stuff initialization
@@ -22,9 +22,9 @@ public class Stickman extends JFrame implements ActionListener {
 	public static JButton nexthat = new JButton("Next hat"); 
 	public static String NAME = System.getProperty("user.name");
 
-	private final Dimension SIZE = new Dimension(1280, 720);
+	public static final Dimension SIZE = new Dimension(1280, 720);
 
-	private Mouser mouser = new Mouser();
+	Mouser mouser = new Mouser();
 
 	public Stickman() {
 		addMouseListener(mouser);
