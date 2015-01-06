@@ -97,11 +97,12 @@ private static BufferedImage StanMarsh;
 
 	public static void nameDraw(Graphics g) {
 		g.setColor(Color.cyan);
-		g.fill3DRect(249, 77, 230, 30, true);
+		g.fill3DRect(248, 77, 230, 30, true);
 		g.setColor(Color.black);
-		g.draw3DRect(249, 77, 230, 30, true);
+		g.draw3DRect(248, 77, 230, 30, true);
 		g.setFont(new Font("Ben", Font.ROMAN_BASELINE, 25));
 		g.drawString("Name: " + Stickman.NAME, 250, 100);
+		
 	}
 	
 
@@ -110,14 +111,14 @@ private static BufferedImage StanMarsh;
 		g.drawImage(getCurrentHat(), 85, 18, null);
 		
 		g.setColor(Color.cyan);
-		g.fill3DRect(128 * Info.getHat(), 473, 130, 130, true);
+		g.fill3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
 		g.setColor(Color.black);
-		g.draw3DRect(128 * Info.getHat(), 473, 130, 130, true);
+		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
 		
-		g.drawImage(TopHat, 128, 473, null);
-		g.drawImage(Cap, 128 * 2, 473, null);
-		g.drawImage(SoldierHat, (128 * 3), 463,null);
-		g.drawImage(StanMarsh, 128 * 4, 473, null);
+		g.drawImage(TopHat, 128, Stickman.SIZE.height - 140, null);
+		g.drawImage(Cap, 128 * 2, Stickman.SIZE.height - 140, null);
+		g.drawImage(SoldierHat, (128 * 3), Stickman.SIZE.height - 150,null);
+		g.drawImage(StanMarsh, 128 * 4, Stickman.SIZE.height - 140, null);
 
 	}
 
