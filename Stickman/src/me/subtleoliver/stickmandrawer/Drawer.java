@@ -43,7 +43,7 @@ private static BufferedImage StanMarsh;
 	}
 
 	public void UIDraw(Graphics g) {
-		if(System.getProperty("os.name") == SandBoxTest.NAME) g.drawImage(Backgrund, 0, 0, null); else g.drawImage(Background, 0, 0, null);
+		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(Backgrund, 0, 0, null); else g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}
 
@@ -56,7 +56,7 @@ private static BufferedImage StanMarsh;
 	}
 
 	public static void faceDraw(Graphics g) {
-		if (SandBoxTest.NAME.equals(System.getProperty("os.name"))) {
+		if (Stickman.NAME.equals(System.getProperty("os.name"))) {
 			g.setColor(Color.LIGHT_GRAY);
 			g.fillOval(102, 102, 95, 95);
 			g.drawImage(WinIcon, 110, 113, 73, 73, null);
@@ -101,7 +101,7 @@ private static BufferedImage StanMarsh;
 		g.setColor(Color.black);
 		g.draw3DRect(249, 77, 230, 30, true);
 		g.setFont(new Font("Ben", Font.ROMAN_BASELINE, 25));
-		g.drawString("Name: " + SandBoxTest.NAME, 250, 100);
+		g.drawString("Name: " + Stickman.NAME, 250, 100);
 	}
 	
 
