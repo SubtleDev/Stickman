@@ -6,8 +6,6 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -15,13 +13,12 @@ import javax.swing.border.TitledBorder;
 
 public class Stickman extends JFrame implements ActionListener {
 
-	public final String VERS = "1.0.0";
-	public final String TITLE = "Stickman " + VERS;
-	private static final long serialVersionUID = -926469678696297356L;
-
+	public final String VERS = "1.0.0"; //Version number
+	public final String TITLE = "Stickman " + VERS; //Frame Title
+	private static final long serialVersionUID = -926469678696297356L; //SerialVersionUID
+	//Stuff initialization
 	public static JTextField namefield = new JTextField();
 	public static JButton nameupdate = new JButton("Update name");
-	public static JButton question = new JButton(new ImageIcon("res/question.png"));
 	public static JButton nexthat = new JButton("Next hat"); 
 	public static String NAME = System.getProperty("user.name");
 
