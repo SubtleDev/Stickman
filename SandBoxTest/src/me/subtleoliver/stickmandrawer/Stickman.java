@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-public class SandBoxTest extends JFrame implements ActionListener {
+public class Stickman extends JFrame implements ActionListener {
 
 	public final String VERS = "1.0.0";
 	public final String TITLE = "Stickman " + VERS;
@@ -29,7 +29,7 @@ public class SandBoxTest extends JFrame implements ActionListener {
 
 	private Mouser mouser = new Mouser();
 
-	public SandBoxTest() {
+	public Stickman() {
 		addMouseListener(mouser);
 		setLayout(null);
 		nameupdate.setSize(new Dimension(120, 40));
@@ -54,7 +54,7 @@ public class SandBoxTest extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		new SandBoxTest();
+		new Stickman();
 	}
 
 	public void paint(Graphics g) {
