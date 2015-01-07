@@ -24,9 +24,12 @@ public class Stickman extends JFrame implements ActionListener {
 
 	public static final Dimension SIZE = new Dimension(1280, 720);
 
+	private Drawer drawer = new Drawer(getGraphics());
+	
 	Mouser mouser = new Mouser();
 
 	public Stickman() {
+		
 		addMouseListener(mouser);
 		setLayout(null);
 		nameupdate.setSize(new Dimension(120, 40));
@@ -54,7 +57,7 @@ public class Stickman extends JFrame implements ActionListener {
 
 	public void paint(Graphics g) {
 		super.paint(g);
-		new Drawer(g);
+		drawer.draw(g);
 	}
 
 	@Override

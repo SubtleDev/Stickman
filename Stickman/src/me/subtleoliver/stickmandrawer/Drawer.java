@@ -19,13 +19,6 @@ private static BufferedImage Background;
 private static BufferedImage Backgrund;
 private static BufferedImage StanMarsh;
 	public Drawer(Graphics g) {
-		UIDraw(g);
-		headDraw(g);
-		faceDraw(g);
-		bodyDraw(g);
-		nameDraw(g);
-		hatDraw(g);
-		
 		try {
 			TopHat = ImageIO.read(new File("bin/TopHat.png"));
 			WinIcon = ImageIO.read(new File("bin/extrastuff/WinIcon.png"));
@@ -40,6 +33,15 @@ private static BufferedImage StanMarsh;
 		
 		
 		
+	}
+	public void draw(Graphics g){
+
+		UIDraw(g);
+		headDraw(g);
+		faceDraw(g);
+		bodyDraw(g);
+		nameDraw(g);
+		hatDraw(g);
 	}
 
 	public static void UIDraw(Graphics g) {
