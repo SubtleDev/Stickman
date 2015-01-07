@@ -56,7 +56,6 @@ public class Stickman extends JFrame implements ActionListener {
 	}
 
 	public void paint(Graphics g) {
-		super.paint(g);
 		drawer.draw(g);
 	}
 

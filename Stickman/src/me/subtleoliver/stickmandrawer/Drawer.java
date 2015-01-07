@@ -7,7 +7,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
 public class Drawer {
@@ -44,12 +43,13 @@ private static BufferedImage StanMarsh;
 		hatDraw(g);
 	}
 
-	public static void UIDraw(Graphics g) {
+	public void UIDraw(Graphics g) {
+		
 		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(Backgrund, 0, 0, null); else g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}
 
-	public static void headDraw(Graphics g) {
+	public void headDraw(Graphics g) {
 		// Draw Head
 		g.setColor(new Color(255, 220, 178));
 		g.fillOval(100, 100, 100, 100);
@@ -57,7 +57,7 @@ private static BufferedImage StanMarsh;
 		g.drawOval(100, 100, 100, 100);
 	}
 
-	public static void faceDraw(Graphics g) {
+	public void faceDraw(Graphics g) {
 		if (Stickman.NAME.equals(System.getProperty("os.name"))) {
 			g.setColor(Color.LIGHT_GRAY);
 			g.fillOval(102, 102, 95, 95);
@@ -85,7 +85,7 @@ private static BufferedImage StanMarsh;
 		}
 	}
 
-	public static void bodyDraw(Graphics g) {
+	public void bodyDraw(Graphics g) {
 		// Draw Body
 		g.drawLine(150, 200, 150, 300);
 		// Draw Arms
@@ -97,7 +97,7 @@ private static BufferedImage StanMarsh;
 		g.drawLine(150, 300, 200, 350);
 	}
 
-	public static void nameDraw(Graphics g) {
+	public void nameDraw(Graphics g) {
 		g.setColor(Color.cyan);
 		g.fill3DRect(248, 77, 230, 30, true);
 		g.setColor(Color.black);
@@ -109,10 +109,13 @@ private static BufferedImage StanMarsh;
 	
 
 
-	private static void hatDraw(Graphics g) {
+	public void hatDraw(Graphics g) {
 		g.drawImage(getCurrentHat(), 85, 18, null);
 		
-		g.setColor(Color.cyan);
+		g.setColor(Color.red);
+		g.fill3DRect(128, Stickman.SIZE.height - 140, 128 * Info.getHats(), 130, true);
+		g.setColor(Color.black); g.draw3DRect(128, Stickman.SIZE.height- 140, 128 * Info.getHats(), 130, true);
+		g.setColor(Color.green);
 		g.fill3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
 		g.setColor(Color.black);
 		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
