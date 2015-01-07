@@ -15,8 +15,8 @@ private static BufferedImage TopHat;
 private static BufferedImage Cap;
 private static BufferedImage SoldierHat;
 private static BufferedImage Background;
-private static BufferedImage Backgrund;
-private static BufferedImage StanMarsh;
+private static BufferedImage BackgroundHat;
+private static BufferedImage Stan;
 	public Drawer(Graphics g) {
 		try {
 			TopHat = ImageIO.read(new File("bin/TopHat.png"));
@@ -24,8 +24,9 @@ private static BufferedImage StanMarsh;
 			Cap = ImageIO.read(new File("bin/Cap.png"));
 			SoldierHat = ImageIO.read(new File("bin/SoldierHat.png"));
 			Background = ImageIO.read(new File("bin/Background.png"));
-			Backgrund = ImageIO.read(new File("bin/extrastuff/124832.png"));
-			StanMarsh = ImageIO.read(new File("bin/StanMarsh.png"));
+			BackgroundHat = ImageIO.read(new File("bin/HatBackground.png"));
+			Stan = ImageIO.read(new File("bin/StanMarsh.png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -45,7 +46,7 @@ private static BufferedImage StanMarsh;
 
 	public void UIDraw(Graphics g) {
 		
-		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(Backgrund, 0, 0, null); else g.drawImage(Background, 0, 0, null);
+		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(BackgroundHat, 0, 0, null); else g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}
 
@@ -111,19 +112,15 @@ private static BufferedImage StanMarsh;
 
 	public void hatDraw(Graphics g) {
 		g.drawImage(getCurrentHat(), 85, 18, null);
-		
-		g.setColor(Color.red);
-		g.fill3DRect(128, Stickman.SIZE.height - 140, 128 * Info.getHats(), 130, true);
-		g.setColor(Color.black); g.draw3DRect(128, Stickman.SIZE.height- 140, 128 * Info.getHats(), 130, true);
-		g.setColor(Color.green);
-		g.fill3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
+		g.drawImage(BackgroundHat, 128, Stickman.SIZE.height-140,null);
+		g.draw3DRect(128, Stickman.SIZE.height -140, 128 * (Info.getHats() + 1),128, true);
 		g.setColor(Color.black);
 		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
 		
 		g.drawImage(TopHat, 128, Stickman.SIZE.height - 140, null);
 		g.drawImage(Cap, 128 * 2, Stickman.SIZE.height - 140, null);
 		g.drawImage(SoldierHat, (128 * 3), Stickman.SIZE.height - 150,null);
-		g.drawImage(StanMarsh, 128 * 4, Stickman.SIZE.height - 140, null);
+		g.drawImage(Stan, 128 * 4, Stickman.SIZE.height - 140, null);
 
 	}
 
@@ -132,7 +129,7 @@ private static BufferedImage StanMarsh;
 		if(Info.getHat() == 1) return TopHat;
 		if(Info.getHat() == 2) return Cap;
 		if(Info.getHat() == 3) return SoldierHat;
-		if(Info.getHat() == 4) return StanMarsh;
+		if(Info.getHat() == 4) return Stan;
 		return null;
 	}
 }
