@@ -27,13 +27,13 @@ private static BufferedImage StanMarsh;
 		hatDraw(g);
 		
 		try {
-			TopHat = ImageIO.read(new File("res/TopHat.png"));
-			WinIcon = ImageIO.read(new File("res/extrastuff/WinIcon.png"));
-			Cap = ImageIO.read(new File("res/Cap.png"));
-			SoldierHat = ImageIO.read(new File("res/SoldierHat.png"));
-			Background = ImageIO.read(new File("res/Background.png"));
-			Backgrund = ImageIO.read(new File("res/extrastuff/124832.png"));
-			StanMarsh = ImageIO.read(new File("res/StanMarsh.png"));
+			TopHat = ImageIO.read(new File("bin/TopHat.png"));
+			WinIcon = ImageIO.read(new File("bin/extrastuff/WinIcon.png"));
+			Cap = ImageIO.read(new File("bin/Cap.png"));
+			SoldierHat = ImageIO.read(new File("bin/SoldierHat.png"));
+			Background = ImageIO.read(new File("bin/Background.png"));
+			Backgrund = ImageIO.read(new File("bin/extrastuff/124832.png"));
+			StanMarsh = ImageIO.read(new File("bin/StanMarsh.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -42,7 +42,7 @@ private static BufferedImage StanMarsh;
 		
 	}
 
-	public void UIDraw(Graphics g) {
+	public static void UIDraw(Graphics g) {
 		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(Backgrund, 0, 0, null); else g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}

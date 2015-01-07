@@ -1,11 +1,11 @@
 package me.subtleoliver.stickmandrawer;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -33,18 +33,16 @@ public class Stickman extends JFrame implements ActionListener {
 		nameupdate.addActionListener(this);
 		nameupdate.setLocation(SIZE.width - 150, 10);
 		namefield.setLocation(SIZE.width - 252, 10);
-		namefield.setSize(new Dimension(100, 40)); namefield.setToolTipText("Leave empty for username");
+		namefield.setSize(new Dimension(100, 40));
 		namefield.setBorder(new TitledBorder("New Name:"));
-		nexthat.setSize(new Dimension(240,60)); nexthat.setToolTipText("Change to the next hat"); nexthat.setBackground(Color.cyan); nexthat.setForeground(Color.black);
+		nexthat.setSize(new Dimension(240,60));
 		nexthat.setLocation(SIZE.width - 255, 120); nexthat.addActionListener(this);
-		setSize(SIZE);
 		setPreferredSize(SIZE);
 		setResizable(false);
 		setTitle(TITLE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		add(nameupdate); add(namefield); add(nexthat);
-		
 		namefield.addActionListener(this);
 		pack();
 
@@ -56,9 +54,7 @@ public class Stickman extends JFrame implements ActionListener {
 
 	public void paint(Graphics g) {
 		super.paint(g);
-
 		new Drawer(g);
-
 	}
 
 	@Override
