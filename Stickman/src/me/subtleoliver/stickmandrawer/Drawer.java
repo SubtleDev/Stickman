@@ -30,12 +30,8 @@ private static BufferedImage Stan;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 	public void draw(Graphics g){
-
 		UIDraw(g);
 		headDraw(g);
 		faceDraw(g);
