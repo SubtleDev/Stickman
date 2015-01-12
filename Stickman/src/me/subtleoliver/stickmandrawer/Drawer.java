@@ -38,6 +38,7 @@ private static BufferedImage Stan;
 		bodyDraw(g);
 		nameDraw(g);
 		hatDraw(g);
+		
 	}
 
 	public void UIDraw(Graphics g) {
