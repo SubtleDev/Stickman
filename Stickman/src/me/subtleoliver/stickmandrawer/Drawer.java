@@ -46,7 +46,7 @@ private static BufferedImage Stan;
 
 	public void UIDraw(Graphics g) {
 		
-		if(System.getProperty("os.name") == Stickman.NAME) g.drawImage(BackgroundHat, 0, 0, null); else g.drawImage(Background, 0, 0, null);
+		g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}
 
