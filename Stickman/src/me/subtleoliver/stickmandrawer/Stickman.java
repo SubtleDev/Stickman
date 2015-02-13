@@ -71,7 +71,7 @@ public class Stickman extends JFrame implements ActionListener {
 			repaint();
 		}
 		if(e.getSource() == nexthat){
-			if(Info.getHat() < Info.getHats()) Info.setHat(Info.getHat() + 1); else Info.setHat(1);
+			if(Info.getHat() < Info.getHats()) Info.setHat((byte) (Info.getHat() + 1)); else Info.setHat((byte) 1);
 			repaint();
 		}
 	}

@@ -2,18 +2,18 @@ package me.subtleoliver.stickmandrawer;
 
 public class Info {
 	
-	private static int hat = 1;
-	private static int hatamount = 4;
+	private static byte hat = 1;
+	private static byte hatamount = 4;
 
-	public static int getHat() {
+	public static byte getHat() {
 		return hat;
 	}
 	
-	public static int getHats() {
+	public static byte getHats() {
 		return hatamount;
 	}
 
-	public static void setHat(int Hat) {
+	public static void setHat(byte Hat) {
 		Info.hat = Hat;
 	}
 	

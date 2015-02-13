@@ -38,11 +38,9 @@ private static BufferedImage Stan;
 		bodyDraw(g);
 		nameDraw(g);
 		hatDraw(g);
-		
 	}
 
 	public void UIDraw(Graphics g) {
-		
 		g.drawImage(Background, 0, 0, null);
 		g.drawRect(0, 0, 234, 370);
 	}
