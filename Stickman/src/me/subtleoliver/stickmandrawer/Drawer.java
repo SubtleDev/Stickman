@@ -5,8 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
 public class Drawer {
@@ -19,13 +19,14 @@ private static BufferedImage BackgroundHat;
 private static BufferedImage Stan;
 	public Drawer(Graphics g) {
 		try {
-			TopHat = ImageIO.read(new File("bin/TopHat.png"));
-			WinIcon = ImageIO.read(new File("bin/extrastuff/WinIcon.png"));
-			Cap = ImageIO.read(new File("bin/Cap.png"));
-			SoldierHat = ImageIO.read(new File("bin/SoldierHat.png"));
-			Background = ImageIO.read(new File("bin/Background.png"));
-			BackgroundHat = ImageIO.read(new File("bin/HatBackground.png"));
-			Stan = ImageIO.read(new File("bin/StanMarsh.png"));
+			
+			TopHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/TopHat.png"));
+			WinIcon = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/extra/WinIcon.png"));
+			Cap = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/Cap.png"));
+			SoldierHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/SoldierHat.png"));
+			Background = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/Background.png"));
+			BackgroundHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/HatBackground.png"));
+			Stan = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/StanMarsh.png"));
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -110,7 +111,7 @@ private static BufferedImage Stan;
 		g.drawImage(BackgroundHat, 128, Stickman.SIZE.height-140,null);
 		g.draw3DRect(128, Stickman.SIZE.height -140, 128 * (Info.getHats() + 1),128, true);
 		g.setColor(Color.black);
-		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 130, true);
+		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 128, true);
 		
 		g.drawImage(TopHat, 128, Stickman.SIZE.height - 140, null);
 		g.drawImage(Cap, 128 * 2, Stickman.SIZE.height - 140, null);
