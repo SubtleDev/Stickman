@@ -19,14 +19,13 @@ private static BufferedImage BackgroundHat;
 private static BufferedImage Stan;
 	public Drawer(Graphics g) {
 		try {
-			
-			TopHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/TopHat.png"));
-			WinIcon = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/extra/WinIcon.png"));
-			Cap = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/Cap.png"));
-			SoldierHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/SoldierHat.png"));
-			Background = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/Background.png"));
-			BackgroundHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/HatBackground.png"));
-			Stan = ImageIO.read(getClass().getResourceAsStream(Info.assetspath + "textures/StanMarsh.png"));
+			TopHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/TopHat.png")));
+			WinIcon = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/extra/WinIcon.png")));
+			Cap = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/Cap.png")));
+			SoldierHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/SoldierHat.png")));
+			Background = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/Background.png")));
+			BackgroundHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/HatBackground.png")));
+			Stan = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/StanMarsh.png")));
 			
 		} catch (IOException e) {
 			e.printStackTrace();

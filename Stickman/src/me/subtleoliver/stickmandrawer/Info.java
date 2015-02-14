@@ -2,12 +2,19 @@ package me.subtleoliver.stickmandrawer;
 
 public class Info {
 	
-	public static String assetspath = "/assets/subtleoliver/Stickman/";
+	public static String assetspath(String path){
+		return "/assets/subtleoliver/Stickman/" + path;
+	}
 	
-
-	private static byte hat = 1;
-	private static byte hatamount = 4;
-
+	//Hats
+		private static byte hat = 1;
+		private static byte hatamount = 4;
+	//Shirts
+		
+	//Pants
+		
+	//Shoes
+		
 	public static byte getHat() {
 		return hat;
 	}
