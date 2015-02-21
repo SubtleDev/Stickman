@@ -10,13 +10,18 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Drawer {
-private static BufferedImage WinIcon;
-private static BufferedImage TopHat;
-private static BufferedImage Cap;
-private static BufferedImage SoldierHat;
-private static BufferedImage Background;
-private static BufferedImage BackgroundHat;
-private static BufferedImage Stan;
+	//Icons
+	private static BufferedImage WinIcon;
+	//Hats
+	private static BufferedImage TopHat;
+	private static BufferedImage Cap;
+	private static BufferedImage SoldierHat;
+	private static BufferedImage Background;
+	private static BufferedImage BackgroundHat;
+	private static BufferedImage Stan;
+	//Shirts
+	private static BufferedImage tshirt1;
+	
 	public Drawer(Graphics g) {
 		try {
 			TopHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/TopHat.png")));
@@ -26,12 +31,14 @@ private static BufferedImage Stan;
 			Background = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/Background.png")));
 			BackgroundHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/HatBackground.png")));
 			Stan = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/StanMarsh.png")));
-			
+			tshirt1 = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/shirts/tshirt1.png")));
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	public void draw(Graphics g){
+
+	public void draw(Graphics g) {
 		UIDraw(g);
 		headDraw(g);
 		faceDraw(g);
@@ -91,6 +98,9 @@ private static BufferedImage Stan;
 		// Draw Legs
 		g.drawLine(150, 300, 100, 350);
 		g.drawLine(150, 300, 200, 350);
+
+		// Draw Shirt:
+
 	}
 
 	public void nameDraw(Graphics g) {
@@ -100,31 +110,39 @@ private static BufferedImage Stan;
 		g.draw3DRect(248, 77, 230, 30, true);
 		g.setFont(new Font("Ben", Font.ROMAN_BASELINE, 25));
 		g.drawString("Name: " + Stickman.NAME, 250, 100);
-		
-	}
-	
 
+	}
 
 	public void hatDraw(Graphics g) {
 		g.drawImage(getCurrentHat(), 85, 18, null);
-		g.drawImage(BackgroundHat, 128, Stickman.SIZE.height-140,null);
-		g.draw3DRect(128, Stickman.SIZE.height -140, 128 * (Info.getHats() + 1),128, true);
+		g.drawImage(BackgroundHat, 128, Stickman.SIZE.height - 140, null);
+		g.draw3DRect(128, Stickman.SIZE.height - 140,
+				128 * (Info.getHats() + 1), 128, true);
 		g.setColor(Color.black);
-		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 128, true);
-		
+		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 128,
+				true);
+
 		g.drawImage(TopHat, 128, Stickman.SIZE.height - 140, null);
 		g.drawImage(Cap, 128 * 2, Stickman.SIZE.height - 140, null);
-		g.drawImage(SoldierHat, (128 * 3), Stickman.SIZE.height - 150,null);
+		g.drawImage(SoldierHat, (128 * 3), Stickman.SIZE.height - 150, null);
 		g.drawImage(Stan, 128 * 4, Stickman.SIZE.height - 140, null);
 
 	}
 
-
-	public static Image getCurrentHat(){
-		if(Info.getHat() == 1) return TopHat;
-		if(Info.getHat() == 2) return Cap;
-		if(Info.getHat() == 3) return SoldierHat;
-		if(Info.getHat() == 4) return Stan;
+	public static Image getCurrentHat() {
+		if (Info.getHat() == 1)
+			return TopHat;
+		if (Info.getHat() == 2)
+			return Cap;
+		if (Info.getHat() == 3)
+			return SoldierHat;
+		if (Info.getHat() == 4)
+			return Stan;
+		return null;
+	}
+	public static Image getCurrentShirt() {
+		if (Info.getShirt() == 1)return tshirt1;
+		if (Info.getShirt() == 2)return Cap;
 		return null;
 	}
 }

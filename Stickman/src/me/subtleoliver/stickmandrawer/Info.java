@@ -10,7 +10,8 @@ public class Info {
 		private static byte hat = 1;
 		private static byte hatamount = 4;
 	//Shirts
-		
+		private static byte shirt = 1;
+		private static byte shirtamount = 2;
 	//Pants
 		
 	//Shoes
@@ -21,6 +22,13 @@ public class Info {
 	
 	public static byte getHats() {
 		return hatamount;
+	}
+	public static byte getShirt() {
+		return shirt;
+	}
+	
+	public static byte getShirts() {
+		return shirtamount;
 	}
 
 	public static void setHat(byte Hat) {
