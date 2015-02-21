@@ -92,14 +92,15 @@ public class Drawer {
 		// Draw Body
 		g.drawLine(150, 200, 150, 300);
 		// Draw Arms
-		g.drawLine(150, 250, 100, 250);
-		g.drawLine(150, 250, 200, 250);
+		g.drawLine(150, 213, 100, 250);
+		g.drawLine(150, 213, 200, 250);
 
 		// Draw Legs
 		g.drawLine(150, 300, 100, 350);
 		g.drawLine(150, 300, 200, 350);
 
 		// Draw Shirt:
+		g.drawImage(tshirt1, 50, 180, null);
 
 	}
 
