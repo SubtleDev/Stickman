@@ -6,31 +6,29 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 public class Drawer {
+	
+	public static ArrayList<BufferedImage> hats = new ArrayList<BufferedImage>();
 	//Icons
 	private static BufferedImage WinIcon;
-	//Hats
-	private static BufferedImage TopHat;
-	private static BufferedImage Cap;
-	private static BufferedImage SoldierHat;
 	private static BufferedImage Background;
-	private static BufferedImage BackgroundHat;
-	private static BufferedImage Stan;
 	//Shirts
 	private static BufferedImage tshirt1;
 	
 	public Drawer(Graphics g) {
 		try {
-			TopHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/TopHat.png")));
-			WinIcon = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/extra/WinIcon.png")));
-			Cap = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/Cap.png")));
-			SoldierHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/SoldierHat.png")));
-			Background = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/Background.png")));
-			BackgroundHat = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/HatBackground.png")));
-			Stan = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/StanMarsh.png")));
+			hats.add(ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/TopHat.png")))); //TopHat
+			hats.add(ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/Cap.png"))));
+			hats.add(ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/SoldierHat.png"))));
+			hats.add(ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/hats/StanMarsh.png"))));
+			
+			Background =(ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/Background.png"))));
+			WinIcon = (ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/extra/WinIcon.png"))));
+			
 			tshirt1 = ImageIO.read(getClass().getResourceAsStream(Info.assetspath("textures/shirts/tshirt1.png")));
 
 		} catch (IOException e) {
@@ -48,8 +46,8 @@ public class Drawer {
 	}
 
 	public void UIDraw(Graphics g) {
-		g.drawImage(Background, 0, 0, null);
-		g.drawRect(0, 0, 234, 370);
+		g.drawImage(Background, 2, 2, null);
+		g.drawRect(2, 2, Background.getWidth(), Background.getHeight());
 	}
 
 	public void headDraw(Graphics g) {
@@ -100,7 +98,7 @@ public class Drawer {
 		g.drawLine(150, 300, 200, 350);
 
 		// Draw Shirt:
-		g.drawImage(tshirt1, 50, 180, null);
+		g.drawImage(getCurrentShirt(), 50, 180, null);
 
 	}
 
@@ -115,35 +113,22 @@ public class Drawer {
 	}
 
 	public void hatDraw(Graphics g) {
-		g.drawImage(getCurrentHat(), 85, 18, null);
-		g.drawImage(BackgroundHat, 128, Stickman.SIZE.height - 140, null);
-		g.draw3DRect(128, Stickman.SIZE.height - 140,
-				128 * (Info.getHats() + 1), 128, true);
+		g.drawImage(hats.get(Info.getHat()), 85, 18, null);
+		g.setColor(Color.cyan);
+		g.fillRect(128, Stickman.SIZE.height - 140, 128*(hats.size()), 128);
 		g.setColor(Color.black);
-		g.draw3DRect(128 * Info.getHat(), Stickman.SIZE.height - 140, 130, 128,
+		g.draw3DRect(128, Stickman.SIZE.height - 140,
+				128 * (hats.size()), 128, true);
+		g.draw3DRect(128 * (Info.getHat() + 1), Stickman.SIZE.height - 140, 128, 128,
 				true);
 
-		g.drawImage(TopHat, 128, Stickman.SIZE.height - 140, null);
-		g.drawImage(Cap, 128 * 2, Stickman.SIZE.height - 140, null);
-		g.drawImage(SoldierHat, (128 * 3), Stickman.SIZE.height - 150, null);
-		g.drawImage(Stan, 128 * 4, Stickman.SIZE.height - 140, null);
+		for(int i = 0; i < hats.size(); i++){
+			g.drawImage(hats.get(i), 128 * (i+1), Stickman.SIZE.height - 150, null);
+		}
 
 	}
 
-	public static Image getCurrentHat() {
-		if (Info.getHat() == 1)
-			return TopHat;
-		if (Info.getHat() == 2)
-			return Cap;
-		if (Info.getHat() == 3)
-			return SoldierHat;
-		if (Info.getHat() == 4)
-			return Stan;
-		return null;
-	}
 	public static Image getCurrentShirt() {
-		if (Info.getShirt() == 1)return tshirt1;
-		if (Info.getShirt() == 2)return Cap;
-		return null;
+		return tshirt1;
 	}
 }

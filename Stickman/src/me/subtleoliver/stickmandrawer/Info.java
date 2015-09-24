@@ -7,40 +7,41 @@ public class Info {
 	}
 
 	// Hats
-		private static byte hat = 1;
-		private static byte hatamount = 4;
+		public static short hat = 0;
 	// Shirts
-		private static byte shirt = 1;
-		private static byte shirtamount = 2;
+		private static short shirt = 1;
+		private static short shirtamount = 2;
 
 	// Pants
 
 	// Shoes
 
 	// Hats
-		public static byte getHat() {
-			return hat;
+		public static short getHat() {
+			return (short) (hat);
 		}
 
-		public static byte getHats() {
-			return hatamount;
-		}
 
-		public static void setHat(byte Hat) {
+		public static void setHat(short Hat) {
 			Info.hat = Hat;
 		}
 
 	// Shirts
-		public static byte getShirt() {
+		public static short getShirt() {
 			return shirt;
 		}
 
-		public static byte getShirts() {
+		public static short getShirts() {
 			return shirtamount;
 		}
 
 		public static void setShirt(byte Shirt) {
 			Info.shirt = Shirt;
+		}
+
+
+		public static void nextHat() {
+			if(Info.getHat() < Drawer.hats.size()-1) hat++; else hat =0;
 		}
 
 }
